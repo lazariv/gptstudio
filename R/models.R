@@ -35,14 +35,14 @@ list_available_models.openai <- function(service) {
     purrr::pluck("data") %>%
     purrr::map_chr("id")
 
-  models <- models %>%
-    stringr::str_subset("^gpt") %>%
-    stringr::str_subset("instruct", negate = TRUE) %>%
-    stringr::str_subset("vision", negate = TRUE) %>%
-    sort()
+  #models <- models %>%
+  #  stringr::str_subset("^gpt") %>%
+  #  stringr::str_subset("instruct", negate = TRUE) %>%
+  #  stringr::str_subset("vision", negate = TRUE) %>%
+  #  sort()
 
-  idx <- which(models == "gpt-3.5-turbo")
-  models <- c(models[idx], models[-idx])
+  #idx <- which(models == "gpt-3.5-turbo")
+  #models <- c(models[idx], models[-idx])
   return(models)
 }
 
